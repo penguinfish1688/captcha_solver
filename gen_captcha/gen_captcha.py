@@ -1,6 +1,7 @@
 from captcha.image import ImageCaptcha
 from PIL import Image
 import numpy as np
+import os
 import random
 import string
 
@@ -75,5 +76,5 @@ y_train = np.array(y_train)
 x_valid = np.array(x_valid)
 y_valid = np.array(y_valid)
 
-
-np.savez("C:\\Users\\cck20\\pytorch\\data\\dataset.npz", x_train=x_train, y_train=y_train, x_valid=x_valid, y_valid=y_valid)
+os.makedirs("../data", exist_ok=True)
+np.savez("../data/dataset.npz", x_train=x_train, y_train=y_train, x_valid=x_valid, y_valid=y_valid)
